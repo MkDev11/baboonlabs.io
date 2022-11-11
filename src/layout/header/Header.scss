@@ -1,0 +1,127 @@
+.header {
+  @apply fixed top-0 left-0 w-full z-50 transition-all ease-in-out duration-300;
+
+  .navbar-brand {
+    @apply flex;
+
+    img.logo {
+      @apply w-32 hidden;
+    }
+  }
+
+  .mobile-navbar-logo {
+    @apply flex w-24 md:w-32;
+  }
+
+  .navbar-toggle {
+    padding: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 1.5rem;
+
+    &:hover {
+      path {
+        @apply stroke-gray-600 transition-all ease-in-out duration-300;
+      }
+    }
+  }
+
+  .navbar {
+    @apply py-2 md:pt-6 flex items-center;
+
+    .container {
+      @apply justify-between;
+    }
+  }
+
+  .navbar-collapse {
+    @apply h-0 flex basis-full items-center justify-end flex-grow flex-col overflow-hidden transition-all ease-in-out duration-300 gap-4;
+
+    &.show {
+      @apply mt-4 pb-6 transition-all ease-in-out duration-300 rounded-b-lg;
+      height: 24rem;
+    }
+
+    .btn {
+      @apply px-12 md:px-8;
+    }
+  }
+
+  .navbar-nav {
+    @apply flex list-none flex-col mr-0 w-full;
+  }
+
+  .nav-link {
+    @apply block text-xs md:text-sm px-4 py-3 text-neutral-900 hover:text-gray-500 focus:text-gray-500 transition-all ease-in-out duration-300 uppercase font-black;
+    font-family: pixelfont !important;
+
+    @media (max-width: 991px) {
+      @apply text-white;
+    }
+
+    span {
+      @apply text-red-400;
+    }
+
+    &:hover {
+      span {
+        @apply text-gray-900;
+      }
+    }
+  }
+}
+
+.black-overlay {
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+@media (max-width: 991px) {
+  .header {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    .navbar-brand {
+      @apply ml-0;
+
+      img.logo {
+        @apply block;
+      }
+    }
+
+    .mobile-navbar-logo {
+      @apply hidden;
+    }
+
+    .navbar-toggle {
+      @apply hidden;
+    }
+
+    .navbar-nav {
+      @apply flex-row mr-8  w-auto;
+    }
+
+    .navbar-collapse {
+      @apply h-auto bg-transparent flex basis-auto flex-row py-0 overflow-visible;
+    }
+
+    .nav-link {
+      @apply rounded;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1535px) {
+  .header .navbar .container {
+    @apply justify-center gap-4;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1279px) {
+  .header .navbar .navbar-collapse {
+    @apply flex-wrap justify-center;
+  }
+}

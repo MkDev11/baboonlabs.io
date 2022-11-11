@@ -1,0 +1,19 @@
+.carousel {
+  @apply overflow-hidden;
+
+  .inner {
+    @apply whitespace-nowrap transform duration-300;
+  }
+
+  .carousel-item {
+    @apply inline-flex items-center justify-center h-52 bg-green-600 text-white;
+  }
+
+  .indicators {
+    @apply flex justify-center;
+
+    > button {
+      margin: 5px;
+    }
+  }
+}

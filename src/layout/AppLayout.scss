@@ -1,0 +1,18 @@
+.app-layout {
+  @apply min-h-screen overflow-hidden;
+}
+
+.slide {
+  animation-name: slide;
+  animation-duration: 1.5s;
+  visibility: visible;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
